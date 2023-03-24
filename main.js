@@ -3,10 +3,11 @@ import {KEPLISTA} from "./adat.js"
 let lista = [];
 
 $(function(){
+    kever(KEPLISTA);
+
     const ARTICLE = $(`article`);
     ARTICLE.html(osszeallit(KEPLISTA));
     const KEPEK = $(`article img`);
-    
     KEPEK.on(`click`, function (event){
         let idNev = $(event.target).attr("id");
         lista.push(idNev);
@@ -41,3 +42,13 @@ function eltuntet(KEPEK){
     lista = [];
 }
 
+function kever(KEPEK){
+    for (let i = 0; i < 100; i++) {
+        let indEgy = Math.floor(Math.random() * KEPEK.length);
+        let indKetto = Math.floor(Math.random() * KEPEK.length);
+        let z = "";
+        z = KEPEK[indEgy];
+        KEPEK[indEgy] = KEPEK[indKetto];
+        KEPEK[indKetto] = z;
+    }
+}
