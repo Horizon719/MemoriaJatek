@@ -7,7 +7,6 @@ $(function(){
     ARTICLE.html(osszeallit(KEPLISTA));
     const KEPEK = $(`article img`);
     
-    
     KEPEK.on(`click`, function (event){
         let idNev = $(event.target).attr("id");
         lista.push(idNev);
@@ -16,9 +15,7 @@ $(function(){
             if (KEPLISTA[lista[0]] != KEPLISTA[lista[1]]) {
                 setTimeout(visszaFor, 1000);
             } else{
-                $($(KEPEK[lista[0]]).css("display", "none"));
-                $($(KEPEK[lista[1]]).css("display", "none"));
-                lista = [];
+                setTimeout(eltuntet, 1000, KEPEK);
             }
         }
     });
@@ -35,6 +32,12 @@ function osszeallit(KEPLISTA){
 
 function visszaFor(){
     $($("img").attr("src", "kepek/hatter.jpg"));
+    lista = [];
+}
+
+function eltuntet(KEPEK){
+    $($(KEPEK[lista[0]]).css("display", "none"));
+    $($(KEPEK[lista[1]]).css("display", "none"));
     lista = [];
 }
 
