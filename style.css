@@ -1,0 +1,19 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+article{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+article div{
+    flex: 0 0 25%;
+}
+
+img{
+    max-width: 100px;
+}
